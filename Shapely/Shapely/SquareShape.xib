@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="Shape Factory" customClass="ShapeFactory">
+            <connections>
+                <outlet property="dblTapGesture" destination="2Jz-an-YFk" id="myg-8y-4Yg"/>
+                <outlet property="trplTapGesture" destination="XoF-4e-gQH" id="DhZ-nF-ew4"/>
+                <outlet property="view" destination="iN0-l3-epB" id="MzJ-L8-AUo"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view opaque="NO" contentMode="scaleToFill" id="iN0-l3-epB" customClass="ShapeView">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="vxF-bg-eBU" appends="YES" id="92q-xe-tXi"/>
+                <outletCollection property="gestureRecognizers" destination="P2T-AC-FZq" appends="YES" id="tbF-Rn-HVr"/>
+                <outletCollection property="gestureRecognizers" destination="2Jz-an-YFk" appends="YES" id="fCh-0T-vzW"/>
+                <outletCollection property="gestureRecognizers" destination="XoF-4e-gQH" appends="YES" id="4bb-ho-BSa"/>
+            </connections>
+        </view>
+        <placeholder placeholderIdentifier="viewController" id="2yS-LM-4jN" customClass="ViewController"/>
+        <panGestureRecognizer minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="vxF-bg-eBU">
+            <connections>
+                <action selector="moveShape:" destination="2yS-LM-4jN" id="3F0-8K-b69"/>
+            </connections>
+        </panGestureRecognizer>
+        <pinchGestureRecognizer id="P2T-AC-FZq">
+            <connections>
+                <action selector="resizeShape:" destination="2yS-LM-4jN" id="h3m-g3-b8R"/>
+            </connections>
+        </pinchGestureRecognizer>
+        <tapGestureRecognizer numberOfTapsRequired="2" id="2Jz-an-YFk" userLabel="Tap Gesture Recognizer 2">
+            <connections>
+                <action selector="changeColor:" destination="2yS-LM-4jN" id="IDl-BF-y9K"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer numberOfTapsRequired="3" id="XoF-4e-gQH" userLabel="Tap Gesture Recognizer 3">
+            <connections>
+                <action selector="sendShapeToBack:" destination="2yS-LM-4jN" id="NKq-wi-rsk"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>

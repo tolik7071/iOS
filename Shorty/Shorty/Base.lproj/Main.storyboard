@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Shorty" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L41-6k-NJP">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem id="ujP-cN-MjT">
+                                        <nil key="title"/>
+                                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://developer.apple.com" borderStyle="roundedRect" placeholder="https://" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="lLB-fk-jGw">
+                                            <rect key="frame" x="20" y="7" width="525" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" returnKeyType="go"/>
+                                            <connections>
+                                                <action selector="loadLocation:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="lyG-eo-4cv"/>
+                                            </connections>
+                                        </textField>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="hHc-5q-o8a">
+                                            <connections>
+                                                <action selector="loadLocation:" destination="BYZ-38-t0r" id="0If-HC-056"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pKe-Tr-RcO">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cgJ-er-Yxn"/>
+                                </connections>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WC6-ag-HwM">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem enabled="NO" systemItem="play" id="nwD-DS-WX6"/>
+                                    <barButtonItem title="Tap arrow to shorten" style="plain" id="xf9-Ie-hK2">
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem enabled="NO" title="Copy" id="Yty-WE-3Cg"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pKe-Tr-RcO" secondAttribute="trailing" id="CY5-yR-3wl"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WC6-ag-HwM" secondAttribute="bottom" id="GiX-5b-aJ2"/>
+                            <constraint firstItem="WC6-ag-HwM" firstAttribute="top" secondItem="pKe-Tr-RcO" secondAttribute="bottom" id="HMO-CO-me5"/>
+                            <constraint firstItem="L41-6k-NJP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="MhQ-ky-AsL"/>
+                            <constraint firstItem="WC6-ag-HwM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="O6h-Qs-ILT"/>
+                            <constraint firstItem="pKe-Tr-RcO" firstAttribute="top" secondItem="L41-6k-NJP" secondAttribute="bottom" id="Qi3-Rd-I9Y"/>
+                            <constraint firstItem="L41-6k-NJP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dNV-Ba-4Ok"/>
+                            <constraint firstItem="pKe-Tr-RcO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dzk-gF-cDc"/>
+                            <constraint firstAttribute="trailing" secondItem="WC6-ag-HwM" secondAttribute="trailing" id="kX8-Ju-HK7"/>
+                            <constraint firstAttribute="trailing" secondItem="L41-6k-NJP" secondAttribute="trailing" id="mdk-dY-H8Z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="clipboardButton" destination="Yty-WE-3Cg" id="rA8-Xa-u0J"/>
+                        <outlet property="shortLabel" destination="xf9-Ie-hK2" id="OJc-6r-sKn"/>
+                        <outlet property="shortenButton" destination="nwD-DS-WX6" id="EcP-d1-IwC"/>
+                        <outlet property="urlField" destination="lLB-fk-jGw" id="TEd-ec-X15"/>
+                        <outlet property="webView" destination="pKe-Tr-RcO" id="GVp-O4-HfS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="500" y="453"/>
+        </scene>
+    </scenes>
+</document>

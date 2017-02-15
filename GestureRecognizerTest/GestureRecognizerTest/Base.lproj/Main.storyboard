@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="MyView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Fpe-qU-Whj" appends="YES" id="zT8-4o-ubf"/>
+                            <outletCollection property="gestureRecognizers" destination="Jd8-xe-UdX" appends="YES" id="9JD-oe-gag"/>
+                            <outletCollection property="gestureRecognizers" destination="LIC-xD-Q99" appends="YES" id="Zfc-L1-xdS"/>
+                            <outletCollection property="gestureRecognizers" destination="6UQ-di-0fz" appends="YES" id="s7K-f7-eCX"/>
+                            <outletCollection property="gestureRecognizers" destination="Dvi-vi-24T" appends="YES" id="9uf-Yf-fuF"/>
+                            <outletCollection property="gestureRecognizers" destination="qPf-8h-gaY" appends="YES" id="GhR-eL-Eq9"/>
+                            <outletCollection property="gestureRecognizers" destination="s3r-47-DNS" appends="YES" id="Mc6-DW-nVC"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="panRecognizer" destination="Dvi-vi-24T" id="fQx-Tg-czD"/>
+                        <outlet property="pinchRecognizer" destination="Jd8-xe-UdX" id="evo-cL-JE1"/>
+                        <outlet property="tapRecognizer" destination="Fpe-qU-Whj" id="zT1-FD-Vfm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Fpe-qU-Whj">
+                    <connections>
+                        <action selector="displayGestureForTapRecognizer:" destination="BYZ-38-t0r" id="6Ds-9T-LAG"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pinchGestureRecognizer id="Jd8-xe-UdX">
+                    <connections>
+                        <action selector="showGestureForPinchRecognizer:" destination="BYZ-38-t0r" id="udz-60-0pW"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="LIC-xD-Q99"/>
+                <swipeGestureRecognizer direction="right" id="6UQ-di-0fz"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Dvi-vi-24T">
+                    <connections>
+                        <action selector="showGestureForPanRecognizer:" destination="BYZ-38-t0r" id="ojf-Zf-8mf"/>
+                    </connections>
+                </panGestureRecognizer>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="qPf-8h-gaY"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="s3r-47-DNS"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
